@@ -35,9 +35,9 @@ end
 
 function key(n, z)
     Keys[n] = z
-    if n == 2 then
+    if n == 2 and Keys[3] == 0 then
         -- record
-        if z == 1 and Keys[3] == 0 then
+        if z == 0 then
             if Patterns[Pattern].rec == 1 then
                 Patterns[Pattern]:rec_stop()
             else
@@ -47,7 +47,7 @@ function key(n, z)
         end
     elseif n == 3 and Keys[2] == 0 then
         -- play
-        if z == 1 then
+        if z == 0 then
             if Patterns[Pattern].play == 1 then
                 Patterns[Pattern]:stop()
             else
